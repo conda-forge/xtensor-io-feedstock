@@ -1,6 +1,6 @@
 {% set name = "xtensor-io" %}
-{% set version = "0.8.0" %}
-{% set sha256 = " b8c3a8b37e43935f1cc9ba1930dbf5c364fe3ce999b14441beeedd7927169763" %}
+{% set version = "0.9.0" %}
+{% set sha256 = "5166afc8d2e05b3dc24a5f3cf8fc89c95f74915fee3c6edf8444c6a9b5557030" %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - zlib
-    - xtensor >=0.20.5,<0.21
+    - xtensor >=0.21.2,<0.22
     - openimageio >=1.8.9,<1.9  # [not win]
     - highfive >=2.0,<2.1  # [not win]
     - libsndfile >=1.0.28,<1.1  # [not win]
