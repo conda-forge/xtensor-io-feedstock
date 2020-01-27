@@ -22,8 +22,8 @@ requirements:
   host:
     - zlib
     - xtensor >=0.21.2,<0.22
-    - openimageio >=1.8.9,<1.9  # [not win]
-    - highfive >=2.0,<2.1  # [not win]
+    - openimageio 2.1  # [not win]
+    - highfive 2.1  # [not win]
     - libsndfile >=1.0.28,<1.1  # [not win]
   run:
     # Xtensor and highfive are header-only
