@@ -1,6 +1,6 @@
 {% set name = "xtensor-io" %}
-{% set version = "0.9.0" %}
-{% set sha256 = "5166afc8d2e05b3dc24a5f3cf8fc89c95f74915fee3c6edf8444c6a9b5557030" %}
+{% set version = "0.10.0" %}
+{% set sha256 = "0aeb0d32fbd8aa10ea603dee9c693fb1aa2ec19a3718286831c1c4bfb5e599bc" %}
 
 package:
   name: {{ name|lower }}
@@ -22,13 +22,16 @@ requirements:
   host:
     - zlib
     - xtensor >=0.21.2,<0.22
+    - cpp-filesystem >=1.3,<1.4
     - openimageio >=1.8.9,<1.9  # [not win]
     - highfive >=2.0,<2.1  # [not win]
     - libsndfile >=1.0.28,<1.1  # [not win]
+    - blosc >=1.20,<1.21
   run:
-    # Xtensor and highfive are header-only
+    # Xtensor, cpp-filesystem and highfive are header-only
     # They don't have a run_exports section
     - {{ pin_compatible('xtensor', max_pin='x.x') }}
+    - {{ pin_compatible('cpp-filesystem', max_pin='x.x') }}
     - {{ pin_compatible('highfive', max_pin='x.x') }}  # [not win]
 
 test:
