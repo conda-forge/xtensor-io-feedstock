@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -40,9 +40,9 @@ test:
     - test -f ${PREFIX}/include/xtensor-io/xtensor-io.hpp  # [unix]
     - test -f ${PREFIX}/lib/cmake/xtensor-io/xtensor-ioConfig.cmake  # [unix]
     - test -f ${PREFIX}/lib/cmake/xtensor-io/xtensor-ioConfigVersion.cmake  # [unix]
-    - if exist %LIBRARY_PREFIX%\include\xtensor-io\xtensor-io.hpp (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_PREFIX%\lib\cmake\xtensor-ioConfig.cmake (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_PREFIX%\lib\cmake\xtensor-ioConfigVersion.cmake (exit 0) else (exit 1)  # [win]
+    - if not exist %LIBRARY_PREFIX%\include\xtensor-io\xtensor-io.hpp (exit 1)  # [win]
+    - if not exist %LIBRARY_PREFIX%\lib\cmake\xtensor-io\xtensor-ioConfig.cmake (exit 1)  # [win]
+    - if not exist %LIBRARY_PREFIX%\lib\cmake\xtensor-io\xtensor-ioConfigVersion.cmake (exit 1)  # [win]
 
 about:
   home: http://quantstack.net/xtensor
@@ -59,3 +59,4 @@ extra:
     - wolfv
     - SylvainCorlay
     - JohanMabille
+    - davidbrochart
