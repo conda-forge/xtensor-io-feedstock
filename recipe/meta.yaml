@@ -19,6 +19,7 @@ requirements:
   build:
     - cmake
     - {{ compiler('cxx') }}
+    - make  # [unix]
   host:
     - zlib
     - xtensor >=0.21.2,<0.22
