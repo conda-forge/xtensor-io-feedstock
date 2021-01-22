@@ -1,6 +1,6 @@
 {% set name = "xtensor-io" %}
-{% set version = "0.11.0" %}
-{% set sha256 = "c27ca9301c5a81936135cc19d1f5d91716d92f688032ab193416b09453d21ec0" %}
+{% set version = "0.12.0" %}
+{% set sha256 = "123a3946298616b6e8eeee343df20065f96b9b4659ea7d758ba9809cfcf5b5ab" %}
 
 package:
   name: {{ name|lower }}
@@ -22,7 +22,7 @@ requirements:
     - make  # [unix]
   host:
     - zlib
-    - xtensor >=0.22.0,<0.23
+    - xtensor >=0.23.0,<0.24
     - cpp-filesystem >=1.3,<1.4
     - openimageio >=2.1,<2.3  # [not win]
     # Highfive 2.2's cmake misses the installation of the libdeps target
