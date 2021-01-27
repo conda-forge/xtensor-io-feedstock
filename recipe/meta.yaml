@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
     - openimageio >=2.1,<2.3  # [not win]
     # Highfive 2.2's cmake misses the installation of the libdeps target
     - highfive >=2.0,<2.2  # [not win]
-    - libsndfile >=1.0.28,<1.1  # [not win]
+    - libsndfile >=1.0.28,<1.1
     - blosc >=1.20,<1.21
   run:
     # Xtensor, cpp-filesystem and highfive are header-only
