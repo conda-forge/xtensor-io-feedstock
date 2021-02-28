@@ -8,11 +8,11 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/QuantStack/xtensor-io/archive/{{ version }}.tar.gz
+  url: https://github.com/xtensor-stack/xtensor-io/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win and vc<14]
 
 requirements:
@@ -47,14 +47,14 @@ test:
     - if not exist %LIBRARY_PREFIX%\lib\cmake\xtensor-io\xtensor-ioConfigVersion.cmake (exit 1)  # [win]
 
 about:
-  home: http://quantstack.net/xtensor
+  home: https://github.com/xtensor-stack/xtensor-io
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Image/NPZ input/output for xtensor, the C++ tensor algebra library
   description: This library enables loading of many image formats into xtensor/xarrays and NPZ.
   doc_url: http://xtensor-io.readthedocs.io
-  dev_url: https://github.com/QuantStack/xtensor-io
+  dev_url: https://github.com/xtensor-stack/xtensor-io
 
 extra:
   recipe-maintainers:
