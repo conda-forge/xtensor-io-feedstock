@@ -1,6 +1,6 @@
 {% set name = "xtensor-io" %}
-{% set version = "0.12.3" %}
-{% set sha256 = "c15b18de033e3f72b7361d22e2932fe6ae98fd7b748dfbea2e6a130e3e19971f" %}
+{% set version = "0.12.4" %}
+{% set sha256 = "0274c91740da73cc11dd0993a3c48e0c370426159f1b7c2723f55e656827ca68" %}
 
 package:
   name: {{ name|lower }}
@@ -21,20 +21,18 @@ requirements:
     - {{ compiler('cxx') }}
     - make  # [unix]
   host:
-    - zlib
     - xtensor >=0.23.0,<0.24
+  run:
+    # xtensor is header-only
+    # it doesn't have a run_exports section
+    - {{ pin_compatible('xtensor', max_pin='x.x') }}
+    - zlib
     - cpp-filesystem >=1.3,<1.4
     - openimageio >=2.1,<2.3  # [not win]
     # Highfive 2.2's cmake misses the installation of the libdeps target
     - highfive >=2.0,<2.2  # [not win]
     - libsndfile >=1.0.28,<1.1
     - blosc >=1.20,<1.21
-  run:
-    # Xtensor, cpp-filesystem and highfive are header-only
-    # They don't have a run_exports section
-    - {{ pin_compatible('xtensor', max_pin='x.x') }}
-    - {{ pin_compatible('cpp-filesystem', max_pin='x.x') }}
-    - {{ pin_compatible('highfive', max_pin='x.x') }}  # [not win]
 
 test:
   commands:
