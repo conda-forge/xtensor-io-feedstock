@@ -1,6 +1,6 @@
 {% set name = "xtensor-io" %}
-{% set version = "0.12.6" %}
-{% set sha256 = "7f9511ec4e8f142832bef5597755aeb513cd28ae39bf1fb0e5dccc6d078bf54c" %}
+{% set version = "0.12.7" %}
+{% set sha256 = "69c2a2958562b645b6c639a2205364b08e548ea1b7319644d40e799a3c6e92e0" %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
     - make  # [unix]
   host:
-    - xtensor >=0.23.0,<0.24
+    - xtensor >=0.23.8,<0.24
   run:
     # xtensor is header-only
     # it doesn't have a run_exports section
