@@ -1,6 +1,6 @@
 {% set name = "xtensor-io" %}
-{% set version = "0.13.0" %}
-{% set sha256 = "470bedee082adb0ef25ef7b54f9cfd3684e27b8489c42cf7980e0d90c14d04da" %}
+{% set version = "0.15.0" %}
+{% set sha256 = "8de6bbf58f79dce1ce56da6d79ac01d0f4110aa45d69ca39f40c1f557b55d488" %}
 
 package:
   name: {{ name|lower }}
@@ -19,6 +19,7 @@ requirements:
   build:
     - cmake
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - make  # [unix]
   host:
     - xtensor >=0.24.0,<0.25
